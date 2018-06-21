@@ -20,14 +20,16 @@ public class APIController {
     @RequestMapping(path="/version")
     public String getVersion(){
         Date now = new Date();
-        return "Version 1.0.0 as of "+now.toString();
+        return "Version 1.0.1 as of "+now.toString();
     }
 
+
     @RequestMapping(path="/pdf")
-    public void getPDF(HttpServletResponse response) throws Exception{
+    public void getAltPDF(HttpServletResponse response) throws Exception{
         PDFBuilder pdfBuilder = new PDFBuilder();
-        PDDocument pdf =  pdfBuilder.showTextWithPositioningDemo();
+        PDDocument pdf =  pdfBuilder.getFancyPDF("Documet Title Goes Here");
         pdf.save(response.getOutputStream());
         response.flushBuffer();
+        pdf.close();
     }
 }
