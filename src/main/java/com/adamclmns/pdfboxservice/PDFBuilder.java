@@ -76,11 +76,11 @@ public class PDFBuilder {
         Cell<PDPage> cell = headerRow.createCell(100, "Example Header Row");
         table.addHeaderRow(headerRow);
 
-
+        // Create a row and add cells with width
         Row<PDPage> row1 = table.createRow(12);
         cell = row1.createCell(30, "30 Width Column");
         cell = row1.createCell(70, "70 Width Column for longer values");
-
+        // Another row.
         Row<PDPage> row2 = table.createRow(15);
         cell = row2.createCell(25, "Quarter Width");
         cell = row2.createCell(25, "Quarter Width");

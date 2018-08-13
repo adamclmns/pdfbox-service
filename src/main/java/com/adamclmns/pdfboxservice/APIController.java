@@ -28,6 +28,7 @@ public class APIController {
     public void getAltPDF(HttpServletResponse response) throws Exception{
         PDFBuilder pdfBuilder = new PDFBuilder();
         PDDocument pdf =  pdfBuilder.getFancyPDF("Documet Title Goes Here");
+
         pdf.save(response.getOutputStream());
         response.flushBuffer();
         pdf.close();
